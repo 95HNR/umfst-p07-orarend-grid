@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Query Teszt - Oldalsav Nézet</title>
+    <link rel="stylesheet" href="grid.css">
+    <style>
+        body {
+            display: flex;
+            gap: 2rem;
+            padding: 1.5rem;
+        }
+
+        .fomenu {
+            flex: 1;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .oldalsav {
+            width: 350px;
+            /* Keskeny oldalsav teszteleshez */
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="fomenu">
+        <h1>Fomenu es Tartalom</h1>
+        <p>Ez a fo tartalom terulete, ami szeles marad a kepernyon.</p>
+        <p>A jobb oldali oldalsavban helyeztuk el az orarend komponenst. Mivel az oldalsav szelessege mindossze 350px, a
+            komponens a container query-nek (@container) koszonhetoen automatikusan listanezetre valt!</p>
+    </main>
+
+    <aside class="oldalsav">
+        <div class="orarend">
+            <div class="racs">
+                <!-- A JS kód automatikusan betölti ide a JSON adatokat -->
+            </div>
+        </div>
+    </aside>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
