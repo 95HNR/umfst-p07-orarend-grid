@@ -1,0 +1,135 @@
+/* Alapbeallitasok es CSS valtozok */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --grid-line-color: #f1f5f9;
+
+    --radius: 8px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding: 1.5rem;
+}
+
+.fejlec {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.fejlec h1 {
+    font-size: 1.875rem;
+    color: #0f172a;
+}
+
+.fejlec p {
+    color: var(--text-secondary);
+}
+
+/* Container Query kontener definicioja */
+.orarend {
+    container-type: inline-size;
+    container-name: orarend-kontener;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+/* CSS Grid szerkezet: 1 idotengely oszlop (4rem) + 5 nap oszlop (1fr) */
+/* 1 fejlec sor (auto) + 24 feloras idosav sor (1.5rem / sor) */
+.racs {
+    display: grid;
+    grid-template-columns: 4rem repeat(5, minmax(140px, 1fr));
+    grid-template-rows: auto repeat(24, 1.5rem);
+    gap: 2px;
+    background-color: var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--radius) - 2px);
+}
+
+/* Fejlecek es idotengely stilusai */
+.fejlec-sarok,
+.nap-fejlec,
+.ido-cimke {
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.fejlec-sarok {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0.75rem 0.5rem;
+}
+
+.nap-fejlec {
+    grid-row: 1;
+    padding: 0.75rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.ido-cimke {
+    grid-column: 1;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    border-right: 1px solid var(--border-color);
+    grid-row-end: span 2;
+    /* 1 ora = 2 feloras sor */
+}
+
+/* Orak dinamikus pozicionalasa CSS valtozokbol */
+.ora {
+    grid-column: calc(var(--nap) + 1);
+    grid-row: var(--kezd) / span var(--hossz);
+    z-index: 1;
+    padding: 2px;
+}
+
+.ora-belso {
+    height: 100%;
+    background-color: #ffffff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 4px;
+    padding: 0.35rem 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.ora-cim {
+    font-size: 0.825rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.ora-helyszin,
+.ora-ido {
+    font-size: 0.725rem;
+    color: var(--text-secondary);
+}
