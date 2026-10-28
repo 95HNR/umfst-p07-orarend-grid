@@ -200,3 +200,66 @@ body {
     text-transform: uppercase;
     opacity: 0.8;
 }
+
+/* Container Query: 600px alatti kontener szelesseg eseten lista nezet */
+@container orarend-kontener (max-width: 600px) {
+    .racs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        background-color: transparent;
+        border: none;
+    }
+
+    /* Fejlec es idotengely elrejtese listanezetben */
+    .fejlec-sarok,
+    .ido-cimke {
+        display: none;
+    }
+
+    /* Napok fejleceinek atalakitasa szekcio-fejlecke */
+    .nap-fejlec {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: var(--text-primary);
+        color: #ffffff;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius);
+        text-align: left;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Az orak felulirjak a racs alapu pozicionalast es kártyaként jelennek meg */
+    .ora {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    .ora-belso {
+        padding: 0.75rem 1rem;
+        border-left-width: 6px;
+        border-radius: var(--radius);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem 1rem;
+        align-items: center;
+    }
+
+    .ora-fejléc {
+        grid-column: 1 / -1;
+        margin-bottom: 0.1rem;
+    }
+
+    .ora-cim {
+        font-size: 1rem;
+    }
+
+    .ora-helyszin,
+    .ora-ido {
+        font-size: 0.85rem;
+    }
+}
