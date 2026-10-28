@@ -133,3 +133,70 @@ body {
     font-size: 0.725rem;
     color: var(--text-secondary);
 }
+
+/* Oratipusok egyedi szinei es hatterei data-tipus alapjan */
+
+/* 1. Eloadas - Kek temakor */
+.ora[data-tipus="eloadas"] .ora-belso {
+    background-color: #eff6ff;
+    border-left-color: #2563eb;
+    color: #1e40af;
+}
+
+.ora[data-tipus="eloadas"] .ora-cim {
+    color: #1e3a8a;
+}
+
+/* 2. Szeminarium - Zold temakor */
+.ora[data-tipus="szeminarium"] .ora-belso {
+    background-color: #f0fdf4;
+    border-left-color: #16a34a;
+    color: #166534;
+}
+
+.ora[data-tipus="szeminarium"] .ora-cim {
+    color: #14532d;
+}
+
+/* 3. Gyakorlat - Narancs / Bordo temakor */
+.ora[data-tipus="gyakorlat"] .ora-belso {
+    background-color: #fff7ed;
+    border-left-color: #ea580c;
+    color: #9a3412;
+}
+
+.ora[data-tipus="gyakorlat"] .ora-cim {
+    color: #7c2d12;
+}
+
+/* 4. Labor - Lila temakor */
+.ora[data-tipus="labor"] .ora-belso {
+    background-color: #faf5ff;
+    border-left-color: #9333ea;
+    color: #6b21a8;
+}
+
+.ora[data-tipus="labor"] .ora-cim {
+    color: #581c87;
+}
+
+/* Ikonok es tipografia finomhangolasa az ora kartyakon belul */
+.ora-fejléc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.ora-tipus-ikon {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.ora-kod {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
