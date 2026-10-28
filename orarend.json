@@ -1,0 +1,156 @@
+[
+    {
+        "id": 1,
+        "nap": 1,
+        "kezd": 2,
+        "hossz": 4,
+        "tipus": "eloadas",
+        "cim": "Anatomia I.",
+        "helyszin": "Focsarnok",
+        "kod": "AOK-101"
+    },
+    {
+        "id": 2,
+        "nap": 1,
+        "kezd": 7,
+        "hossz": 3,
+        "tipus": "szeminarium",
+        "cim": "Orvosi Terminologia",
+        "helyszin": "T1",
+        "kod": "AOK-102"
+    },
+    {
+        "id": 3,
+        "nap": 1,
+        "kezd": 11,
+        "hossz": 4,
+        "tipus": "gyakorlat",
+        "cim": "Szovettan Gyakorlat",
+        "helyszin": "Lab 1",
+        "kod": "AOK-103"
+    },
+    {
+        "id": 4,
+        "nap": 2,
+        "kezd": 2,
+        "hossz": 4,
+        "tipus": "eloadas",
+        "cim": "Elettan I.",
+        "helyszin": "Focsarnok",
+        "kod": "AOK-104"
+    },
+    {
+        "id": 5,
+        "nap": 2,
+        "kezd": 7,
+        "hossz": 3,
+        "tipus": "labor",
+        "cim": "Biokemia Labor",
+        "helyszin": "Lab 3",
+        "kod": "AOK-105"
+    },
+    {
+        "id": 6,
+        "nap": 2,
+        "kezd": 11,
+        "hossz": 4,
+        "tipus": "gyakorlat",
+        "cim": "Anatomia Gyakorlat",
+        "helyszin": "Boncterem",
+        "kod": "AOK-106"
+    },
+    {
+        "id": 7,
+        "nap": 3,
+        "kezd": 3,
+        "hossz": 3,
+        "tipus": "eloadas",
+        "cim": "Biofizika",
+        "helyszin": "Amfiteatrum",
+        "kod": "AOK-107"
+    },
+    {
+        "id": 8,
+        "nap": 3,
+        "kezd": 7,
+        "hossz": 4,
+        "tipus": "szeminarium",
+        "cim": "Pszichologia",
+        "helyszin": "T3",
+        "kod": "AOK-108"
+    },
+    {
+        "id": 9,
+        "nap": 3,
+        "kezd": 12,
+        "hossz": 3,
+        "tipus": "labor",
+        "cim": "Elettan Labor",
+        "helyszin": "Lab 2",
+        "kod": "AOK-109"
+    },
+    {
+        "id": 10,
+        "nap": 4,
+        "kezd": 2,
+        "hossz": 4,
+        "tipus": "eloadas",
+        "cim": "Biokemia I.",
+        "helyszin": "Focsarnok",
+        "kod": "AOK-110"
+    },
+    {
+        "id": 11,
+        "nap": 4,
+        "kezd": 7,
+        "hossz": 4,
+        "tipus": "szeminarium",
+        "cim": "Orvosi Etika (1. csop)",
+        "helyszin": "T2",
+        "kod": "AOK-111",
+        "atfedo": true,
+        "eltolas": 0
+    },
+    {
+        "id": 12,
+        "nap": 4,
+        "kezd": 7,
+        "hossz": 4,
+        "tipus": "labor",
+        "cim": "Biofizika Labor (2. csop)",
+        "helyszin": "Lab 4",
+        "kod": "AOK-112",
+        "atfedo": true,
+        "eltolas": 1
+    },
+    {
+        "id": 13,
+        "nap": 5,
+        "kezd": 2,
+        "hossz": 3,
+        "tipus": "eloadas",
+        "cim": "Kozegeszsegutan",
+        "helyszin": "Focsarnok",
+        "kod": "AOK-113"
+    },
+    {
+        "id": 14,
+        "nap": 5,
+        "kezd": 6,
+        "hossz": 4,
+        "tipus": "gyakorlat",
+        "cim": "Elsosegely Gyakorlat",
+        "helyszin": "Skills Lab",
+        "kod": "AOK-114"
+    },
+    {
+        "id": 15,
+        "nap": 5,
+        "kezd": 11,
+        "hossz": 3,
+        "tipus": "szeminarium",
+        "cim": "Klinikai Alapok",
+        "helyszin": "T4",
+        "kod": "AOK-115"
+    }
+]
