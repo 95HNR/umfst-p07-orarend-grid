@@ -63,9 +63,10 @@ body {
     background-color: var(--border-color);
     border: 1px solid var(--border-color);
     border-radius: calc(var(--radius) - 2px);
+    grid-auto-flow: dense;
 }
 
-/* Fejlecek es idotengely stilusai */
+/* Fejleceke es idotengely stilusai */
 .fejlec-sarok,
 .nap-fejlec,
 .ido-cimke {
@@ -98,7 +99,6 @@ body {
     color: var(--text-secondary);
     border-right: 1px solid var(--border-color);
     grid-row-end: span 2;
-    /* 1 ora = 2 feloras sor */
 }
 
 /* Orak dinamikus pozicionalasa CSS valtozokbol */
@@ -122,65 +122,6 @@ body {
     overflow: hidden;
 }
 
-.ora-cim {
-    font-size: 0.825rem;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.ora-helyszin,
-.ora-ido {
-    font-size: 0.725rem;
-    color: var(--text-secondary);
-}
-
-/* Oratipusok egyedi szinei es hatterei data-tipus alapjan */
-
-/* 1. Eloadas - Kek temakor */
-.ora[data-tipus="eloadas"] .ora-belso {
-    background-color: #eff6ff;
-    border-left-color: #2563eb;
-    color: #1e40af;
-}
-
-.ora[data-tipus="eloadas"] .ora-cim {
-    color: #1e3a8a;
-}
-
-/* 2. Szeminarium - Zold temakor */
-.ora[data-tipus="szeminarium"] .ora-belso {
-    background-color: #f0fdf4;
-    border-left-color: #16a34a;
-    color: #166534;
-}
-
-.ora[data-tipus="szeminarium"] .ora-cim {
-    color: #14532d;
-}
-
-/* 3. Gyakorlat - Narancs / Bordo temakor */
-.ora[data-tipus="gyakorlat"] .ora-belso {
-    background-color: #fff7ed;
-    border-left-color: #ea580c;
-    color: #9a3412;
-}
-
-.ora[data-tipus="gyakorlat"] .ora-cim {
-    color: #7c2d12;
-}
-
-/* 4. Labor - Lila temakor */
-.ora[data-tipus="labor"] .ora-belso {
-    background-color: #faf5ff;
-    border-left-color: #9333ea;
-    color: #6b21a8;
-}
-
-.ora[data-tipus="labor"] .ora-cim {
-    color: #581c87;
-}
-
-/* Ikonok es tipografia finomhangolasa az ora kartyakon belul */
 .ora-fejléc {
     display: flex;
     align-items: center;
@@ -201,6 +142,71 @@ body {
     opacity: 0.8;
 }
 
+.ora-cim {
+    font-size: 0.825rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.ora-helyszin,
+.ora-ido {
+    font-size: 0.725rem;
+    color: var(--text-secondary);
+}
+
+/* Oratipusok egyedi szinei data-tipus alapjan */
+.ora[data-tipus="eloadas"] .ora-belso {
+    background-color: #eff6ff;
+    border-left-color: #2563eb;
+    color: #1e40af;
+}
+
+.ora[data-tipus="eloadas"] .ora-cim {
+    color: #1e3a8a;
+}
+
+.ora[data-tipus="szeminarium"] .ora-belso {
+    background-color: #f0fdf4;
+    border-left-color: #16a34a;
+    color: #166534;
+}
+
+.ora[data-tipus="szeminarium"] .ora-cim {
+    color: #14532d;
+}
+
+.ora[data-tipus="gyakorlat"] .ora-belso {
+    background-color: #fff7ed;
+    border-left-color: #ea580c;
+    color: #9a3412;
+}
+
+.ora[data-tipus="gyakorlat"] .ora-cim {
+    color: #7c2d12;
+}
+
+.ora[data-tipus="labor"] .ora-belso {
+    background-color: #faf5ff;
+    border-left-color: #9333ea;
+    color: #6b21a8;
+}
+
+.ora[data-tipus="labor"] .ora-cim {
+    color: #581c87;
+}
+
+/* Atfedo orak vizualis elrendezese */
+.ora.atfedo {
+    width: calc(100% - (var(--eltolas, 0) * 15px));
+    margin-left: calc(var(--eltolas, 0) * 15px);
+    z-index: calc(2 + var(--eltolas, 0));
+}
+
+.ora.atfedo:hover {
+    z-index: 20;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
 /* Container Query: 600px alatti kontener szelesseg eseten lista nezet */
 @container orarend-kontener (max-width: 600px) {
     .racs {
@@ -211,13 +217,11 @@ body {
         border: none;
     }
 
-    /* Fejlec es idotengely elrejtese listanezetben */
     .fejlec-sarok,
     .ido-cimke {
         display: none;
     }
 
-    /* Napok fejleceinek atalakitasa szekcio-fejlecke */
     .nap-fejlec {
         position: sticky;
         top: 0;
@@ -231,35 +235,16 @@ body {
         margin-top: 0.5rem;
     }
 
-    /* Az orak felulirjak a racs alapu pozicionalast es kártyaként jelennek meg */
     .ora {
         grid-column: auto !important;
         grid-row: auto !important;
-        width: 100%;
-        margin-bottom: 0.25rem;
+        width: 100% !important;
+        margin-left: 0 !important;
     }
 
     .ora-belso {
         padding: 0.75rem 1rem;
         border-left-width: 6px;
         border-radius: var(--radius);
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.5rem 1rem;
-        align-items: center;
-    }
-
-    .ora-fejléc {
-        grid-column: 1 / -1;
-        margin-bottom: 0.1rem;
-    }
-
-    .ora-cim {
-        font-size: 1rem;
-    }
-
-    .ora-helyszin,
-    .ora-ido {
-        font-size: 0.85rem;
     }
 }

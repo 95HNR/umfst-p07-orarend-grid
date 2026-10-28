@@ -45,10 +45,13 @@
                 <div class="ido-cimke" style="grid-row: 22;">18:00</div>
                 <div class="ido-cimke" style="grid-row: 24;">19:00</div>
 
-                <!-- Pelda orak statikus HTML-ben CSS valtozokkal -->
+                <!-- Orak CSS valtozokkal es data-tipus attributumokkal -->
                 <article class="ora" data-tipus="eloadas" style="--nap: 1; --kezd: 2; --hossz: 3;">
                     <div class="ora-belso">
-                        <span class="ora-tipus-ikon">📖</span>
+                        <div class="ora-fejléc">
+                            <span class="ora-tipus-ikon">📖</span>
+                            <span class="ora-kod">AOK-01</span>
+                        </div>
                         <h3 class="ora-cim">Anatomia eloadas</h3>
                         <p class="ora-helyszin">Focsarnok</p>
                         <time class="ora-ido">08:00 - 09:30</time>
@@ -57,10 +60,39 @@
 
                 <article class="ora" data-tipus="gyakorlat" style="--nap: 2; --kezd: 5; --hossz: 4;">
                     <div class="ora-belso">
-                        <span class="ora-tipus-ikon">🔬</span>
+                        <div class="ora-fejléc">
+                            <span class="ora-tipus-ikon">🔬</span>
+                            <span class="ora-kod">AOK-02</span>
+                        </div>
                         <h3 class="ora-cim">Elettan gyakorlat</h3>
                         <p class="ora-helyszin">Lab 2</p>
                         <time class="ora-ido">09:30 - 11:30</time>
+                    </div>
+                </article>
+
+                <!-- Atfedo orak peldaja csutortok 10:00 - 12:00 sávban -->
+                <article class="ora atfedo" data-tipus="szeminarium"
+                    style="--nap: 4; --kezd: 6; --hossz: 4; --eltolas: 0;">
+                    <div class="ora-belso">
+                        <div class="ora-fejléc">
+                            <span class="ora-tipus-ikon">💬</span>
+                            <span class="ora-kod">1. Csoport</span>
+                        </div>
+                        <h3 class="ora-cim">Orvosi Etika</h3>
+                        <p class="ora-helyszin">Terem 101</p>
+                        <time class="ora-ido">10:00 - 12:00</time>
+                    </div>
+                </article>
+
+                <article class="ora atfedo" data-tipus="labor" style="--nap: 4; --kezd: 6; --hossz: 4; --eltolas: 1;">
+                    <div class="ora-belso">
+                        <div class="ora-fejléc">
+                            <span class="ora-tipus-ikon">🧫</span>
+                            <span class="ora-kod">2. Csoport</span>
+                        </div>
+                        <h3 class="ora-cim">Biofizika Labor</h3>
+                        <p class="ora-helyszin">Lab 4</p>
+                        <time class="ora-ido">10:00 - 12:00</time>
                     </div>
                 </article>
 
