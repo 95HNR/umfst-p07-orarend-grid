@@ -1,0 +1,111 @@
+/* Nyomtatasi nezet - Fekvo A4, fekete-feher, mintazatokkal */
+
+@page {
+    size: A4 landscape;
+    margin: 0.8cm;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        font-size: 10pt;
+    }
+
+    .fejlec {
+        margin-bottom: 0.5rem;
+        text-align: left;
+    }
+
+    .fejlec h1 {
+        font-size: 1.2rem;
+        color: #000000;
+    }
+
+    .fejlec p {
+        font-size: 0.8rem;
+        color: #333333;
+    }
+
+    .orarend {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    .racs {
+        border: 1.5px solid #000000 !important;
+        background-color: #ffffff !important;
+        gap: 1px !important;
+    }
+
+    .fejlec-sarok,
+    .nap-fejlec,
+    .ido-cimke {
+        background-color: #f0f0f0 !important;
+        color: #000000 !important;
+        border-color: #000000 !important;
+        font-weight: bold;
+    }
+
+    /* Ora kartyak fekete-feher kerettel es egyedi mintazattal oratipusonkent */
+    .ora-belso {
+        background-color: #ffffff !important;
+        border: 1.5px solid #000000 !important;
+        color: #000000 !important;
+        padding: 2px 4px !important;
+    }
+
+    .ora-cim {
+        font-size: 0.75rem !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+    }
+
+    .ora-helyszin,
+    .ora-ido {
+        font-size: 0.65rem !important;
+        color: #000000 !important;
+    }
+
+    /* 1. Eloadas - Dolt csikozas */
+    .ora[data-tipus="eloadas"] .ora-belso {
+        background: repeating-linear-gradient(45deg,
+                #ffffff,
+                #ffffff 6px,
+                #e0e0e0 6px,
+                #e0e0e0 10px) !important;
+    }
+
+    /* 2. Szeminarium - Pttyozott mintazat */
+    .ora[data-tipus="szeminarium"] .ora-belso {
+        background: radial-gradient(#000000 15%, transparent 16%) 0 0 / 6px 6px, #ffffff !important;
+    }
+
+    /* 3. Gyakorlat - Vizszintes csikozas */
+    .ora[data-tipus="gyakorlat"] .ora-belso {
+        background: repeating-linear-gradient(0deg,
+                #ffffff,
+                #ffffff 4px,
+                #d0d0d0 4px,
+                #d0d0d0 7px) !important;
+    }
+
+    /* 4. Labor - Keresztcsikos / racsos mintazat */
+    .ora[data-tipus="labor"] .ora-belso {
+        background:
+            linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+            linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px) !important;
+        background-size: 6px 6px !important;
+    }
+}
