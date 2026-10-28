@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOK II. Evfolyam Orarend</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+
+<body>
+
+    <header class="fejlec">
+        <h1>AOK II. Evfolyam - Heti Orarend</h1>
+        <p>CSS Grid es Container Query alapu orarend komponens</p>
+    </header>
+
+    <main class="tartalom">
+        <!-- Kontener elem a container query-hez -->
+        <div class="orarend">
+            <div class="racs">
+
+                <!-- Idotengely sarok elem -->
+                <div class="fejlec-sarok">Idopont</div>
+
+                <!-- Napok fejlece (oszlopok: 1-5) -->
+                <div class="nap-fejlec" style="grid-column: 2;">Hetfo</div>
+                <div class="nap-fejlec" style="grid-column: 3;">Kedd</div>
+                <div class="nap-fejlec" style="grid-column: 4;">Szerda</div>
+                <div class="nap-fejlec" style="grid-column: 5;">Csutortok</div>
+                <div class="nap-fejlec" style="grid-column: 6;">Penteik</div>
+
+                <!-- Idotengely (8:00 - 20:00, feloras egysegek: 24 sor) -->
+                <div class="ido-cimke" style="grid-row: 2;">08:00</div>
+                <div class="ido-cimke" style="grid-row: 4;">09:00</div>
+                <div class="ido-cimke" style="grid-row: 6;">10:00</div>
+                <div class="ido-cimke" style="grid-row: 8;">11:00</div>
+                <div class="ido-cimke" style="grid-row: 10;">12:00</div>
+                <div class="ido-cimke" style="grid-row: 12;">13:00</div>
+                <div class="ido-cimke" style="grid-row: 14;">14:00</div>
+                <div class="ido-cimke" style="grid-row: 16;">15:00</div>
+                <div class="ido-cimke" style="grid-row: 18;">16:00</div>
+                <div class="ido-cimke" style="grid-row: 20;">17:00</div>
+                <div class="ido-cimke" style="grid-row: 22;">18:00</div>
+                <div class="ido-cimke" style="grid-row: 24;">19:00</div>
+
+                <!-- Pelda orak statikus HTML-ben CSS valtozokkal -->
+                <article class="ora" data-tipus="eloadas" style="--nap: 1; --kezd: 2; --hossz: 3;">
+                    <div class="ora-belso">
+                        <span class="ora-tipus-ikon">📖</span>
+                        <h3 class="ora-cim">Anatomia eloadas</h3>
+                        <p class="ora-helyszin">Focsarnok</p>
+                        <time class="ora-ido">08:00 - 09:30</time>
+                    </div>
+                </article>
+
+                <article class="ora" data-tipus="gyakorlat" style="--nap: 2; --kezd: 5; --hossz: 4;">
+                    <div class="ora-belso">
+                        <span class="ora-tipus-ikon">🔬</span>
+                        <h3 class="ora-cim">Elettan gyakorlat</h3>
+                        <p class="ora-helyszin">Lab 2</p>
+                        <time class="ora-ido">09:30 - 11:30</time>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
